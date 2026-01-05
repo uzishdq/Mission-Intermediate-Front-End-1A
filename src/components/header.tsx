@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
-import { dashboardMenu } from "../data/constant";
+import { dashboardMenu, ImgAssets } from "../data/constant";
 
 type HeaderVariant = "public" | "dashboard";
 
@@ -30,7 +30,7 @@ export default function Header({ variant = "public" }: Readonly<HeaderProps>) {
             <div className="hidden md:flex items-center gap-6">
               <p className="text-sm font-medium">Kategori</p>
               <img
-                src="https://i.pravatar.cc/40"
+                src={ImgAssets.PROFILE}
                 alt="User Avatar"
                 className="w-8 h-8 rounded-full"
               />
