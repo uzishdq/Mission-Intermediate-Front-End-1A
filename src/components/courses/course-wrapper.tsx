@@ -19,7 +19,7 @@ export default function CoursesWrapper() {
       : DataCourses.filter((course) => course.category === activeTab);
 
   return (
-    <section className="bg-[#fff9ef] py-20">
+    <section className="py-20">
       <div className="max-w-300 mx-auto px-8">
         <div className="mb-12 text-left">
           <h2 className="text-3xl font-bold text-gray-900 mb-3">
@@ -37,13 +37,13 @@ export default function CoursesWrapper() {
               onClick={() => setActiveTab(tab.value)}
               className={`relative text-base font-semibold py-2 transition-colors whitespace-nowrap ${
                 activeTab === tab.value
-                  ? "text-yellow-500"
-                  : "text-gray-400 hover:text-yellow-500"
+                  ? "text-orange-500"
+                  : "text-gray-400 hover:text-orange-500"
               }`}
             >
               {tab.label}
               {activeTab === tab.value && (
-                <span className="absolute bottom-0 left-0 w-full h-1 bg-yellow-500 rounded"></span>
+                <span className="absolute bottom-0 left-0 w-full h-1 bg-orange-500 rounded"></span>
               )}
             </button>
           ))}
