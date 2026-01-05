@@ -5,75 +5,11 @@ interface ICourseCard {
   course: Course;
 }
 
-// function CourseCard({ course }: Readonly<ICourseCard>) {
-//   return (
-//     <div className="flex flex-col md:flex-col gap-4 bg-white rounded-xl overflow-hidden shadow transition-transform duration-300 hover:shadow-lg hover:-translate-y-1 will-change-transform">
-//       {/* Desktop image full width */}
-//       <img
-//         src={course.img}
-//         alt={course.title}
-//         className="hidden md:block w-full h-48 object-cover rounded-t-xl"
-//       />
-
-//       {/* Mobile layout: image kiri, info kanan */}
-//       <div className="flex flex-row md:flex-col gap-4 px-4 py-3 md:px-3 md:py-2">
-//         {/* Image mobile */}
-//         <img
-//           src={course.img}
-//           alt={course.title}
-//           className="w-24 h-24 rounded-lg object-cover md:hidden shrink-0"
-//         />
-
-//         {/* Info */}
-//         <div className="flex flex-col gap-2 flex-1">
-//           {/* Title */}
-//           <h3 className="text-lg font-bold text-gray-900 leading-snug">
-//             {course.title}
-//           </h3>
-
-//           {/* Instructor & Job */}
-//           <div className="flex items-center gap-3">
-//             <img
-//               src="https://placehold.co/40x40?text=JO"
-//               alt={course.instructor}
-//               className="w-10 h-10 rounded-lg object-cover"
-//             />
-//             <div className="flex flex-col">
-//               <h4 className="text-sm font-semibold text-gray-900 m-0">
-//                 {course.instructor}
-//               </h4>
-//               <p className="text-xs text-gray-400 m-0">{course.job}</p>
-//             </div>
-//           </div>
-
-//           {/* Deskripsi hanya md+ */}
-//           <p className="text-sm text-gray-500 leading-relaxed mt-2 hidden md:block">
-//             {course.desc}
-//           </p>
-//         </div>
-//       </div>
-
-//       {/* Footer */}
-//       <div className="flex justify-between items-center px-4 py-2 md:px-3 md:py-2 border-t border-gray-100">
-//         <div className="flex items-center gap-2 text-yellow-500 text-sm">
-//           <span>★★★★☆</span>
-//           <span className="text-gray-500">
-//             {course.rating} ({course.reviews})
-//           </span>
-//         </div>
-//         <div className="text-green-500 font-bold text-lg">
-//           Rp {course.price}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
 function CourseCard({ course }: Readonly<ICourseCard>) {
   return (
     <div className="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-2 will-change-transform">
       {/* Desktop Hero Image */}
-      <div className="relative hidden aspect-[4/3] w-full overflow-hidden md:block">
+      <div className="relative hidden aspect-4/3 w-full overflow-hidden md:block">
         <img
           src={course.img}
           alt={course.title}

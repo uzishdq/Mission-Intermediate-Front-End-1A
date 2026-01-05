@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { DataCourses } from "../../data/constant";
 import CourseCard from "./course-card";
+import CourseCardSkeleton from "./course-card-skeleton";
 
 const tabs = [
   { label: "Semua Kelas", value: "all" },
@@ -12,11 +13,19 @@ const tabs = [
 
 export default function CoursesWrapper() {
   const [activeTab, setActiveTab] = useState("all");
+  const [loading, setLoading] = useState(false);
 
   const filteredCourses =
     activeTab === "all"
       ? DataCourses
       : DataCourses.filter((course) => course.category === activeTab);
+
+  const handleTabClick = (tabValue: string) => {
+    setActiveTab(tabValue);
+    setLoading(true);
+
+    setTimeout(() => setLoading(false), 300);
+  };
 
   return (
     <section className="py-20">
@@ -34,7 +43,7 @@ export default function CoursesWrapper() {
           {tabs.map((tab) => (
             <button
               key={tab.value}
-              onClick={() => setActiveTab(tab.value)}
+              onClick={() => handleTabClick(tab.value)}
               className={`relative text-base font-semibold py-2 transition-colors whitespace-nowrap ${
                 activeTab === tab.value
                   ? "text-orange-500"
@@ -55,9 +64,13 @@ export default function CoursesWrapper() {
           </div>
         ) : (
           <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-6">
-            {filteredCourses.map((course) => (
-              <CourseCard key={course.id} course={course} />
-            ))}
+            {loading
+              ? Array.from({ length: 6 }).map((_, i) => (
+                  <CourseCardSkeleton key={i} />
+                ))
+              : filteredCourses.map((course) => (
+                  <CourseCard key={course.id} course={course} />
+                ))}
           </div>
         )}
       </div>
