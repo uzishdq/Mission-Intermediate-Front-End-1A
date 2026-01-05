@@ -1,4 +1,5 @@
 import Button from "../components/button";
+import CoursesWrapper from "../components/courses/course-wrapper";
 import Footer from "../components/footer";
 import Header from "../components/header";
 import HeroCta from "../components/hero-cta";
@@ -16,9 +17,6 @@ export default function DashboardPage() {
           title={TitleDesc.HERO.TITLE}
           description={TitleDesc.HERO.DESC}
         >
-          {/* <Button variant="primary" href="/">
-            Temukan Video Course untuk Dipelajari!
-          </Button> */}
           <div className="max-w-lg mx-auto">
             <Button variant="primary" href="/">
               Temukan Video Course untuk Dipelajari!
@@ -26,26 +24,14 @@ export default function DashboardPage() {
           </div>
         </HeroCta>
 
+        <CoursesWrapper />
+
         <HeroCta
           variant="cta"
           backgroundImage={ImgAssets.CTA}
           title={TitleDesc.CTA.TITLE}
           description={TitleDesc.CTA.DESC}
         >
-          {/* <form className="relative w-full max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Masukkan Emailmu"
-              required
-              className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 text-black focus:outline-none focus:ring-2 focus:ring-info"
-            />
-            <button
-              type="submit"
-              className="absolute top-1/2 right-2 -translate-y-1/2 bg-info text-white font-semibold px-4 py-2 rounded-lg hover:bg-info-hover transition-colors"
-            >
-              Subscribe
-            </button>
-          </form> */}
           <form className="relative w-full max-w-md mx-auto flex flex-col sm:block">
             <input
               type="email"
