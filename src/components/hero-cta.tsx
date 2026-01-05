@@ -1,11 +1,13 @@
 interface HeroProps {
+  variant: "hero" | "cta";
   backgroundImage: string;
   title: string;
   description: string;
-  children?: React.ReactNode; // khusus CTA
+  children?: React.ReactNode;
 }
 
 export default function HeroCta({
+  variant,
   backgroundImage,
   title,
   description,
@@ -21,6 +23,8 @@ export default function HeroCta({
 
       {/* Content */}
       <div className="relative z-10 px-4 py-10 md:px-12 md:py-16 text-center">
+        {variant === "cta" && <p className="text-2xl">NEWSLETTER</p>}
+
         <h1 className="text-[clamp(28px,5vw,48px)] leading-[1.15] font-bold">
           {title}
         </h1>
