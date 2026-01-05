@@ -14,13 +14,10 @@ export default function InputForm({
 }: Readonly<InputFormProps>) {
   return (
     <div className="flex flex-col gap-1">
-      {/* Label */}
       <label htmlFor={id} className="text-sm font-medium text-gray-700">
         {label}
         {props.required && <span className="text-red-500 ml-1">*</span>}
       </label>
-
-      {/* Input */}
       <input
         id={id}
         className={`
@@ -32,7 +29,6 @@ export default function InputForm({
         {...props}
       />
 
-      {/* Error */}
       {error && <span className="text-xs text-red-500">{error}</span>}
     </div>
   );

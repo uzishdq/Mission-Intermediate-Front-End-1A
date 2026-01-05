@@ -66,7 +66,7 @@ export default function CoursesWrapper() {
           <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-6">
             {loading
               ? Array.from({ length: 6 }).map((_, i) => (
-                  <CourseCardSkeleton key={i} />
+                  <CourseCardSkeleton key={`skeleton-${activeTab}-${i}`} />
                 ))
               : filteredCourses.map((course) => (
                   <CourseCard key={course.id} course={course} />

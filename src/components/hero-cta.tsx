@@ -18,10 +18,8 @@ export default function HeroCta({
       className="relative w-full max-w-300 mx-auto min-h-80 md:min-h-105 rounded-lg bg-cover bg-center bg-no-repeat flex items-center justify-center text-white px-4 md:px-0"
       style={{ backgroundImage: `url('${backgroundImage}')` }}
     >
-      {/* Overlay */}
       <div className="absolute inset-0 rounded-lg bg-linear-to-b from-black/75 to-black/60" />
 
-      {/* Content */}
       <div className="relative z-10 px-4 py-10 md:px-12 md:py-16 text-center">
         {variant === "cta" && <p className="text-2xl">NEWSLETTER</p>}
 
@@ -33,7 +31,6 @@ export default function HeroCta({
           {description}
         </p>
 
-        {/* CTA SLOT */}
         {children && <div className="mt-8">{children}</div>}
       </div>
     </section>

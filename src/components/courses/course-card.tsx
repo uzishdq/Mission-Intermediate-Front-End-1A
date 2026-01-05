@@ -8,7 +8,6 @@ interface ICourseCard {
 function CourseCard({ course }: Readonly<ICourseCard>) {
   return (
     <div className="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-2 will-change-transform">
-      {/* Desktop Hero Image */}
       <div className="relative hidden aspect-4/3 w-full overflow-hidden md:block">
         <img
           src={course.img}
@@ -18,9 +17,7 @@ function CourseCard({ course }: Readonly<ICourseCard>) {
         />
       </div>
 
-      {/* Konten */}
       <div className="flex flex-1 flex-row gap-4 p-4 md:flex-col md:gap-3">
-        {/* Mobile thumbnail */}
         <div className="relative aspect-square w-28 shrink-0 overflow-hidden rounded-xl md:hidden">
           <img
             src={course.img}
@@ -30,7 +27,6 @@ function CourseCard({ course }: Readonly<ICourseCard>) {
           />
         </div>
 
-        {/* Info */}
         <div className="flex flex-1 flex-col gap-2.5">
           <h3 className="line-clamp-2 text-base font-bold leading-tight text-gray-900 md:text-lg">
             {course.title}
@@ -40,7 +36,6 @@ function CourseCard({ course }: Readonly<ICourseCard>) {
             {course.desc}
           </p>
 
-          {/* Instructor */}
           <div className="flex items-center gap-3">
             <img
               src="https://placehold.co/40x40?text=JO"
@@ -57,7 +52,6 @@ function CourseCard({ course }: Readonly<ICourseCard>) {
         </div>
       </div>
 
-      {/* Footer */}
       <div className="flex items-center justify-between border-t border-gray-100 px-4 py-3 md:px-4 md:py-3">
         <div className="flex items-center gap-1.5 text-sm">
           <span className="text-amber-500">★★★★☆</span>

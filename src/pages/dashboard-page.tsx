@@ -48,6 +48,7 @@ export default function DashboardPage() {
           </form>
         </HeroCta>
       </main>
+
       <Footer />
     </>
   );

@@ -15,7 +15,6 @@ export default function Header({ variant = "public" }: Readonly<HeaderProps>) {
   return (
     <header className="bg-white shadow">
       <nav className="flex items-center justify-between px-6 py-4">
-        {/* Logo */}
         <Link
           to={variant === "dashboard" ? "/dashboard" : "/"}
           className="flex items-center gap-3"
@@ -26,7 +25,6 @@ export default function Header({ variant = "public" }: Readonly<HeaderProps>) {
         {/* DASHBOARD */}
         {variant === "dashboard" && (
           <>
-            {/* Desktop Menu */}
             <div className="hidden md:flex items-center gap-6">
               <p className="text-sm font-medium">Kategori</p>
               <img
@@ -36,7 +34,6 @@ export default function Header({ variant = "public" }: Readonly<HeaderProps>) {
               />
             </div>
 
-            {/* Mobile Button */}
             <button
               type="button"
               aria-label="Toggle menu"
@@ -49,7 +46,6 @@ export default function Header({ variant = "public" }: Readonly<HeaderProps>) {
         )}
       </nav>
 
-      {/* Mobile Dropdown */}
       {variant === "dashboard" && open && (
         <div className="md:hidden border-t">
           {dashboardMenu.map((item) => (

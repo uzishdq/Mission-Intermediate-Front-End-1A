@@ -19,15 +19,12 @@ export default function PhoneInput({
 }: Readonly<PhoneInputProps>) {
   return (
     <div className="flex flex-col gap-1">
-      {/* Label */}
       <label htmlFor={id} className="text-sm font-medium text-gray-700">
         {label}
         {required && <span className="text-red-500 ml-1">*</span>}
       </label>
 
-      {/* Phone Wrapper */}
       <div className="flex gap-2">
-        {/* Select */}
         <select
           className={`
             w-27.5 px-3 py-3 rounded-md border
@@ -42,8 +39,6 @@ export default function PhoneInput({
           <option value="+65">🇸🇬 +65</option>
           <option value="+60">🇲🇾 +60</option>
         </select>
-
-        {/* Input */}
         <input
           id={id}
           type="tel"
@@ -57,7 +52,6 @@ export default function PhoneInput({
         />
       </div>
 
-      {/* Error */}
       {error && <span className="text-xs text-red-500">{error}</span>}
     </div>
   );
