@@ -10,6 +10,10 @@
   --color-secondary-hover: #bbf7d0;
   --color-secondary-foreground: #16a34a;
 
+  --color-info: #ffbd3a;
+  --color-info-hover: #d97706;
+  --color-info-foreground: #16a34a;
+
   --background-image-cta: url("/hero-bg.png");
 }
 
